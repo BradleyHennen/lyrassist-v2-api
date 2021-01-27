@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 
 // Route includes
 const datamuseRouter = require('./routes/datamuse.router');
+const userRouter = require('./routes/user.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -12,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors())
 
 /* Routes */
-// app.use('/api/user', userRouter);
+app.use('/api/user', userRouter);
 app.use('/api/datamuse', datamuseRouter);
 
 // Serve static files

@@ -21,17 +21,11 @@ const getAuthToken = (req, res, next) => {
 
 const checkIfAuthenticated = (req, res, next) => {
   getAuthToken(req, res, async () => {
-    console.log('req', req.authToken);
-    // console.log('res', res);
-
     try {
       const { authToken } = req;
       const userInfo = await admin
         .auth()
         .verifyIdToken(authToken);
-      console.log('authToken', authToken);
-      console.log('userInfo', userInfo);
-
       req.authId = userInfo.uid;
       return next();
     } catch (e) {
