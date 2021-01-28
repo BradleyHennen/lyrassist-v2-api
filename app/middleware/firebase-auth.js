@@ -1,5 +1,5 @@
 const admin = require("firebase-admin");
-const serviceAccount = require("../../Firebase/lyrassist-cd50e-firebase-adminsdk-t90m0-0e9542ef9f.json");
+const serviceAccount = require("../../../Firebase/lyrassist-cd50e-firebase-adminsdk-t90m0-0e9542ef9f.json");
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),

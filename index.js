@@ -4,8 +4,8 @@ const app = express();
 const bodyParser = require('body-parser');
 
 // Route includes
-const datamuseRouter = require('./routes/datamuse.router');
-const userRouter = require('./routes/user.router');
+const datamuseRouter = require('./app/routes/datamuse.router');
+const userRouter = require('./app/routes/user.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
