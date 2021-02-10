@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "local": "nodemon --watch index.js --watch ./app",
+    "local": "nodemon --watch index.js --watch ./",
     "test": "jest --no-cache --runInBand --detectOpenHandles"
   },
   "author": "bradley hennen",

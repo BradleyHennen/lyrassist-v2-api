@@ -1,10 +1,11 @@
+require('dotenv').config()
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 
 // Route includes
-const datamuseRouter = require('./app/routes/datamuse.router');
-const userRouter = require('./app/routes/user.router');
+const datamuseRouter = require('./routes/datamuse.router');
+const userRouter = require('./routes/user.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
