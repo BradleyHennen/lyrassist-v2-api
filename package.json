@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --watch index.js --watch ./app",
+    "start": "node index.js",
+    "local": "nodemon --watch index.js --watch ./app",
     "test": "jest --no-cache --runInBand --detectOpenHandles"
   },
   "author": "bradley hennen",
