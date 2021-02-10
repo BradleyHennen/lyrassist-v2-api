@@ -2,7 +2,11 @@ const admin = require("firebase-admin");
 const serviceAccount = require("../../../Firebase/lyrassist-cd50e-firebase-adminsdk-t90m0-0e9542ef9f.json");
 
 admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
+  credential: admin.credential.cert({
+    "project_id": process.env.FIREBASE_PROJECT_ID,
+    "private_key": process.env.FIREBASE_PRIVATE_KEY,
+    "client_email": process.env.FIREBASE_CLIENT_EMAIL,
+  }),
   databaseURL: "https://lyrassist-cd50e.firebaseio.com"
 });
 
