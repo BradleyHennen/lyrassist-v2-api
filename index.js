@@ -6,11 +6,14 @@ const bodyParser = require('body-parser');
 // Route includes
 const datamuseRouter = require('./app/routes/datamuse.router');
 const userRouter = require('./app/routes/user.router');
-
+const corsOptions = {
+  origin: 'http://localhost:3000',
+  optionsSuccessStatus: 200 // For legacy browser support
+}
 // Body parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors())
+app.use(cors(corsOptions))
 
 /* Routes */
 app.use('/api/user', userRouter);
