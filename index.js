@@ -16,8 +16,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors(corsOptions))
 
 /* Routes */
-app.use('/api/user', userRouter);
-app.use('/api/datamuse', datamuseRouter);
+app.use('/api/user', cors(corsOptions), userRouter);
+app.use('/api/datamuse', cors(corsOptions) ,datamuseRouter);
 
 // Serve static files
 app.use(express.static('build'));
