@@ -2,9 +2,10 @@ const express = require('express');
 const router = express.Router();
 const axios = require('axios');
 const firebase = require('../middleware/firebase-auth');
-const corsConfig = require('../middleware/cors');
+const cors = require('cors')
+const corsOptions = require('../middleware/cors');
 
-router.get('/:query', firebase.checkIfAuthenticated, (req, res) => {
+router.get('/:query', firebase.checkIfAuthenticated, cors(corsOptions), (req, res) => {
     console.log('In Datamuse GET. Req.params:', req.params.query);
     const query = req.params.query;
     let endpoint = `https://api.datamuse.com/words?${query}&max=100`;
