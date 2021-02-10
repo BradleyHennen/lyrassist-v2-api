@@ -14,10 +14,10 @@ const corsOptions = {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors(corsOptions))
-
+app.options('*', cors(corsOptions))
 /* Routes */
-app.use('/api/user', cors(corsOptions), userRouter);
-app.use('/api/datamuse', cors(corsOptions) ,datamuseRouter);
+app.use('/api/user', userRouter);
+app.use('/api/datamuse', datamuseRouter);
 
 // Serve static files
 app.use(express.static('build'));
